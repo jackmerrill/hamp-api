@@ -30,6 +30,7 @@ type LaundryRoom struct {
 	ID         string    `json:"id"`
 	Name       string    `json:"name"`
 	NextUpdate time.Time `json:"nextUpdate"`
+	LastUpdate time.Time `json:"lastUpdate"`
 
 	Machines []Machine `json:"machines"`
 
@@ -121,6 +122,9 @@ func (l *LaundryRoom) GetMachines() error {
 	})
 
 	l.Machines = machines
+
+	// set the last update time
+	l.LastUpdate = time.Now()
 
 	// set the next update time
 	l.NextUpdate = time.Now().Add(45 * time.Second)
