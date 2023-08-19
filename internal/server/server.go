@@ -4,10 +4,13 @@ import (
 	social "github.com/jackmerrill/hamp-api/internal/server/routes/social"
 	util "github.com/jackmerrill/hamp-api/internal/server/routes/utilities"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func Start() error {
 	e := echo.New()
+
+	e.Use(middleware.Logger())
 
 	api := e.Group("/api")
 
