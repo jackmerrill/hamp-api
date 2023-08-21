@@ -26,6 +26,8 @@ type Machine struct {
 	EstimatedTime *time.Time  `json:"estimatedTime"`
 }
 
+// LaundryRoom model info
+// @Description The model for a laundry room.
 type LaundryRoom struct {
 	ID         string    `json:"id"`
 	Name       string    `json:"name"`
@@ -180,6 +182,14 @@ func InitLaundry() {
 	}
 }
 
+// GetDakin godoc
+// @Summary Get the laundry room data for Dakin.
+// @Description Get the laundry room data for Dakin. Add /live for a live websocket stream.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} LaundryRoom
+// @Router /utilities/laundry/dakin [get]
 func GetDakin(c echo.Context) error {
 	// get the laundry room
 	room := LaundryRooms[0]
@@ -222,6 +232,15 @@ func GetDakinLive(c echo.Context) error {
 	return nil
 }
 
+// GetDakinMachine godoc
+// @Summary Get a specific machine in the Dakin laundry room.
+// @Description Get a specific machine in the Dakin laundry room.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} LaundryRoom
+// @Param id path string true "Machine ID"
+// @Router /utilities/laundry/dakin/:id [get]
 func GetDakinMachine(c echo.Context) error {
 	room := LaundryRooms[0]
 
@@ -238,6 +257,14 @@ func GetDakinMachine(c echo.Context) error {
 	return c.JSON(200, machine)
 }
 
+// GetMerrill godoc
+// @Summary Get the laundry room data for Merrill.
+// @Description Get the laundry room data for Merrill. Add /live for a live websocket stream.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} Machine
+// @Router /utilities/laundry/merrill [get]
 func GetMerrill(c echo.Context) error {
 	// get the laundry room
 	room := LaundryRooms[1]
@@ -280,6 +307,15 @@ func GetMerrillLive(c echo.Context) error {
 	return nil
 }
 
+// GetMerrillMachine godoc
+// @Summary Get a specific machine in the Merrill laundry room.
+// @Description Get a specific machine in the Merrill laundry room.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} Machine
+// @Param id path string true "Machine ID"
+// @Router /utilities/laundry/merrill/:id [get]
 func GetMerrillMachine(c echo.Context) error {
 	room := LaundryRooms[1]
 
@@ -296,6 +332,14 @@ func GetMerrillMachine(c echo.Context) error {
 	return c.JSON(200, machine)
 }
 
+// GetEnfield godoc
+// @Summary Get the laundry room data for Enfield.
+// @Description Get the laundry room data for Enfield. Add /live for a live websocket stream.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} LaundryRoom
+// @Router /utilities/laundry/enfield [get]
 func GetEnfield(c echo.Context) error {
 	// get the laundry room
 	room := LaundryRooms[2]
@@ -338,6 +382,15 @@ func GetEnfieldLive(c echo.Context) error {
 	return nil
 }
 
+// GetEnfieldMachine godoc
+// @Summary Get a specific machine in the Enfield laundry room.
+// @Description Get a specific machine in the Enfield laundry room.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} Machine
+// @Param id path string true "Machine ID"
+// @Router /utilities/laundry/enfield/:id [get]
 func GetEnfieldMachine(c echo.Context) error {
 	room := LaundryRooms[2]
 
@@ -354,6 +407,14 @@ func GetEnfieldMachine(c echo.Context) error {
 	return c.JSON(200, machine)
 }
 
+// GetPrescott godoc
+// @Summary Get the laundry room data for Prescott.
+// @Description Get the laundry room data for Prescott. Add /live for a live websocket stream.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} LaundryRoom
+// @Router /utilities/laundry/prescott [get]
 func GetPrescott(c echo.Context) error {
 	// get the laundry room
 	room := LaundryRooms[3]
@@ -396,6 +457,15 @@ func GetPrescottLive(c echo.Context) error {
 	return nil
 }
 
+// GetPrescottMachine godoc
+// @Summary Get a specific machine in the Prescott laundry room.
+// @Description Get a specific machine in the Prescott laundry room.
+// @Tags utilities
+// @Accept json
+// @Produce json
+// @Success 200 {object} Machine
+// @Param id path string true "Machine ID"
+// @Router /utilities/laundry/prescott/:id [get]
 func GetPrescottMachine(c echo.Context) error {
 	room := LaundryRooms[3]
 
