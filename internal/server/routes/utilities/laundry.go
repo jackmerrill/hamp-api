@@ -240,7 +240,7 @@ func GetDakinLive(c echo.Context) error {
 // @Produce json
 // @Success 200 {object} LaundryRoom
 // @Param id path string true "Machine ID"
-// @Router /utilities/laundry/dakin/:id [get]
+// @Router /utilities/laundry/dakin/{id} [get]
 func GetDakinMachine(c echo.Context) error {
 	room := LaundryRooms[0]
 
@@ -315,7 +315,7 @@ func GetMerrillLive(c echo.Context) error {
 // @Produce json
 // @Success 200 {object} Machine
 // @Param id path string true "Machine ID"
-// @Router /utilities/laundry/merrill/:id [get]
+// @Router /utilities/laundry/merrill/{id} [get]
 func GetMerrillMachine(c echo.Context) error {
 	room := LaundryRooms[1]
 
@@ -390,7 +390,7 @@ func GetEnfieldLive(c echo.Context) error {
 // @Produce json
 // @Success 200 {object} Machine
 // @Param id path string true "Machine ID"
-// @Router /utilities/laundry/enfield/:id [get]
+// @Router /utilities/laundry/enfield/{id} [get]
 func GetEnfieldMachine(c echo.Context) error {
 	room := LaundryRooms[2]
 
@@ -465,7 +465,7 @@ func GetPrescottLive(c echo.Context) error {
 // @Produce json
 // @Success 200 {object} Machine
 // @Param id path string true "Machine ID"
-// @Router /utilities/laundry/prescott/:id [get]
+// @Router /utilities/laundry/prescott/{id} [get]
 func GetPrescottMachine(c echo.Context) error {
 	room := LaundryRooms[3]
 
