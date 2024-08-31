@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	_ "github.com/jackmerrill/hamp-api/docs"
+	menu "github.com/jackmerrill/hamp-api/internal/server/routes/dining"
 	social "github.com/jackmerrill/hamp-api/internal/server/routes/social"
 	util "github.com/jackmerrill/hamp-api/internal/server/routes/utilities"
 	"github.com/labstack/echo/v4"
@@ -41,6 +42,7 @@ func Start() error {
 
 	socialGroup := api.Group("/social")
 	utilitiesGroup := api.Group("/utilities")
+	dining := api.Group("/dining")
 
 	overHeard := socialGroup.Group("/overheard")
 	overHeard.POST("/generate", social.GeneratePost)
@@ -62,6 +64,9 @@ func Start() error {
 	laundry.GET("/prescott", util.GetPrescott)
 	laundry.GET("/prescott/machines/:machine", util.GetPrescottMachine)
 	laundry.GET("/prescott/live", util.GetPrescottLive)
+
+	dining.GET("/menu", menu.GetMenu)
+	dining.GET("/menu/today", menu.GetTodaysMenu)
 
 	return e.Start(":1323")
 }
