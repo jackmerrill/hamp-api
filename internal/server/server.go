@@ -67,6 +67,7 @@ func Start() error {
 
 	dining.GET("/menu", menu.GetMenu)
 	dining.GET("/menu/today", menu.GetTodaysMenu)
+	dining.GET("/menu/tomorrow", menu.GetTomorrowsMenu)
 
 	return e.Start(":1323")
 }
