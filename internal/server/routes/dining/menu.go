@@ -111,7 +111,8 @@ func ParseCSV(u string) (*Menu, error) {
 	}
 
 	// Remove the first row, its a title
-	records = records[1:]
+	// Removed 9/17/2024 as they removed the title row but it might come back
+	// records = records[1:]
 
 	// Initialize Menu
 	var menu Menu
